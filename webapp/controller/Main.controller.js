@@ -73,7 +73,7 @@ sap.ui.define([
             var oEntitySetContext = oModel.bindContext("/uploadMidMatrix").getBoundContext();
 
             // 2. Bind the action RELATIVE to that collection context.
-            var sActionName = "com.sap.gateway.srvd_a2x.zppsd_setup_matrix.v0001.uploadExcel(...)";
+            var sActionName = "com.sap.gateway.srvd.zppsd_setup_matrix.v0001.uploadExcel(...)";
             var oActionBinding = oModel.bindContext(sActionName, oEntitySetContext);
 
             // Check if OData V4 is being used

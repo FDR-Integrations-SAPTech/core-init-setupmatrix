@@ -32,13 +32,14 @@ server:
         backend:
           - path: /sap
             url: http://virtualds4:44300
+            client: '050'
             destination: S4HANA
     - name: sap-fe-mockserver
       beforeMiddleware: csp
       configuration:
         mountPath: /
         services:
-          - urlPath: /sap/opu/odata4/sap/zpp_api_setup_matrix/srvd_a2x/sap/zppsd_setup_matrix/0001
+          - urlPath: /sap/opu/odata4/sap/zui_setupmatrix_o4/srvd/sap/zppsd_setup_matrix/0001
             metadataPath: ./webapp/localService/mainService/metadata.xml
             mockdataPath: ./webapp/localService/mainService/data
             generateMockData: true

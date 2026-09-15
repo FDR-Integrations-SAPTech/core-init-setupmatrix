@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata4/sap/zpp_api_setup_matrix/srvd_a2x/sap/zppsd_setup_matrix/0001/",
+        "uri": "/sap/opu/odata4/sap/zui_setupmatrix_o4/srvd/sap/zppsd_setup_matrix/0001/",
         "type": "OData",
         "settings": {
           "annotations": [],
