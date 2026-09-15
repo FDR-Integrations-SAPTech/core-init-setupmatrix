@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd_a2x.zppsd_setup_matrix.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="uploadMidMatrixType">
+                <Key>
+                    <PropertyRef Name="MatrixId"/>
+                </Key>
+                <Property Name="MatrixId" Type="Edm.String" Nullable="false" MaxLength="22"/>
+                <Property Name="Locid" Type="Edm.String" Nullable="false" MaxLength="22"/>
+                <Property Name="MatrixName" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Ersda" Type="Edm.Date"/>
+                <Property Name="Ernam" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Laeda" Type="Edm.Date"/>
+                <Property Name="Aenam" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="IsGenerated" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd_a2x.zppsd_setup_matrix.v0001.SAP__Message)" Nullable="false"/>
+            </EntityType>
+            <ComplexType Name="ZPPD_SETUP_MATRIX_RES">
+                <Property Name="cost" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="entrytype" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="fldname" Type="Edm.String" Nullable="false" MaxLength="132"/>
+                <Property Name="fromvalue" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="insertchk" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="message" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="msgid" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="msgnr" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="msgspra" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="msgtyp" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="msgv1" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="msgv2" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="msgv3" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="msgv4" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="status" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="time" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="tovalue" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="unit" Type="Edm.String" Nullable="false" MaxLength="3"/>
+            </ComplexType>
+            <ComplexType Name="SAP__Message">
+                <Property Name="code" Type="Edm.String" Nullable="false"/>
+                <Property Name="message" Type="Edm.String" Nullable="false"/>
+                <Property Name="target" Type="Edm.String"/>
+                <Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+                <Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="longtextUrl" Type="Edm.String"/>
+            </ComplexType>
+            <Action Name="uploadExcel" IsBound="true">
+                <Parameter Name="_it" Type="Collection(com.sap.gateway.srvd_a2x.zppsd_setup_matrix.v0001.uploadMidMatrixType)" Nullable="false"/>
+                <Parameter Name="Attachment" Type="Edm.Binary" Nullable="false"/>
+                <Parameter Name="MimeType" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Parameter Name="Filename" Type="Edm.String" Nullable="false"/>
+                <ReturnType Type="Collection(com.sap.gateway.srvd_a2x.zppsd_setup_matrix.v0001.ZPPD_SETUP_MATRIX_RES)" Nullable="true"/>
+            </Action>
+            <EntityContainer Name="Container">
+                <EntitySet Name="uploadMidMatrix" EntityType="com.sap.gateway.srvd_a2x.zppsd_setup_matrix.v0001.uploadMidMatrixType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.uploadMidMatrixType/MatrixName">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Setup Matrix"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name of Setup Matrix"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadMidMatrixType/Ernam">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Created By"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name of Person Responsible for Creating the Object"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadMidMatrixType/Aenam">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Changed By"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name of Person Who Changed Object"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadExcel(Collection(SAP__self.uploadMidMatrixType))/Attachment">
+                <Annotation Term="SAP__common.Label" String="Select Excel File"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadMidMatrixType">
+                <Annotation Term="SAP__common.Label" String="Setup matrix consumption view"/>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/uploadMidMatrix">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadExcel(Collection(SAP__self.uploadMidMatrixType))">
+                <Annotation Term="Communication.Contact">
+                    <Record/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadMidMatrixType/MatrixId">
+                <Annotation Term="SAP__common.Label" String="Matrix ID"/>
+                <Annotation Term="SAP__common.Heading" String="MatrixID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Matrix Identification"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadMidMatrixType/Locid">
+                <Annotation Term="SAP__common.Label" String="Location ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Internal Location Number for Customer, Supplier, or Plant"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadMidMatrixType/Ersda">
+                <Annotation Term="SAP__common.Label" String="Created On"/>
+                <Annotation Term="SAP__common.Heading" String="Created"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadMidMatrixType/Laeda">
+                <Annotation Term="SAP__common.Label" String="Last Change"/>
+                <Annotation Term="SAP__common.Heading" String="Last Chg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Date of Last Change"/>
+            </Annotations>
+            <Annotations Target="SAP__self.uploadMidMatrixType/IsGenerated">
+                <Annotation Term="SAP__common.Label" String="Generated Matrix"/>
+                <Annotation Term="SAP__common.Heading" String="Generated Setup Matrix"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Generated Setup Matrix"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/cost">
+                <Annotation Term="SAP__common.Label" String="Character Field with Length 10"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/entrytype">
+                <Annotation Term="SAP__common.Label" String="Setup Trans. Type"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Type of Setup Transition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/fldname">
+                <Annotation Term="SAP__common.Label" String="Field name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/fromvalue">
+                <Annotation Term="SAP__common.Label" String="Char"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Character field of length 40"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/insertchk">
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/message">
+                <Annotation Term="SAP__common.Label" String="Character 100"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/msgid">
+                <Annotation Term="SAP__common.Label" String="BDC MID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Batch input message ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/msgnr">
+                <Annotation Term="SAP__common.Label" String="BDC MNO"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Batch input message number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/msgspra">
+                <Annotation Term="SAP__common.Label" String="Lang. ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Language ID of a message"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/msgtyp">
+                <Annotation Term="SAP__common.Label" String="BDC Msg.type"/>
+                <Annotation Term="SAP__common.Heading" String="BDC Message type"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Batch input message type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/msgv1">
+                <Annotation Term="SAP__common.Label" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Variable part of a message"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/msgv2">
+                <Annotation Term="SAP__common.Label" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Variable part of a message"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/msgv3">
+                <Annotation Term="SAP__common.Label" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Variable part of a message"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/msgv4">
+                <Annotation Term="SAP__common.Label" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Variable part of a message"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/status">
+                <Annotation Term="SAP__common.Label" String="Char20"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Char 20"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/time">
+                <Annotation Term="SAP__common.Label" String="Character Field with Length 10"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/tovalue">
+                <Annotation Term="SAP__common.Label" String="Char"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Character field of length 40"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZPPD_SETUP_MATRIX_RES/unit">
+                <Annotation Term="SAP__common.Label" String="Unit for Setup Time"/>
+                <Annotation Term="SAP__common.Heading" String="Un"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Unit of Measurement for Setup Time"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

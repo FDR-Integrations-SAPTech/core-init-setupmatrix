@@ -1,0 +1,22 @@
+<mvc:View controllerName="zppsetupmatrix.controller.Main"   
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:upload="sap.m.upload"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <upload:UploadSet
+                id="excelUploadSet"
+                instantUpload="false"
+                maxFileNameLength="50"
+                afterItemAdded="onFileAdded"
+                uploadCompleted="onUploadComplete">
+                <upload:toolbar>
+                    <OverflowToolbar id="_IDGenOverflowToolbar">
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                        <Button id="uploadBtn" text="Upload Setup Matrix" press="onUploadTrigger" type="Emphasized" enabled="false"/>
+                    </OverflowToolbar>
+                </upload:toolbar>
+            </upload:UploadSet>
+        </content>
+    </Page>
+</mvc:View>

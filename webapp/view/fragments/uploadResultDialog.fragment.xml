@@ -1,0 +1,42 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog id="resultDialog" title="Excel Processing Results" contentWidth="850px" contentHeight="450px">
+        <content>
+            <!-- Bind to the temporary local client-side JSON model -->
+            <Table id="resultTable" items="{resultModel>/items}" sticky="ColumnHeaders">
+                <columns>                    
+                    <Column id="_IDGenColumn1" width="6rem"><Text id="_IDGenText1" text="Status" /></Column>
+                    <Column id="_IDGenColumn2" width="6rem"><Text id="_IDGenText2" text="From" /></Column>
+                    <Column id="_IDGenColumn3" width="6rem"><Text id="_IDGenText3" text="To" /></Column>
+                    <Column id="_IDGenColumn5" width="6rem" ><Text id="_IDGenTime" text="Time" /></Column>
+                    <Column id="_IDGenColumn6" width="4rem" ><Text id="_IDGenUnit" text="Unit" /></Column>
+                    <Column id="_IDGenColumn7" width="6rem" ><Text id="_IDGenCost" text="Cost" /></Column>
+                    <Column id="_IDGenColumn8" width="6rem" ><Text id="_IDGeninsert" text="Action" /></Column>
+                    <Column id="_IDGenColumn4"><Text id="_IDGenText9" text="Message" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1">
+                        <cells>
+                            <!-- <Text id="_IDGenText4" text="{resultModel>RowNumber}" /> -->
+                            <!-- Visual status anchor utilizing an ObjectStatus micro-color indicator -->
+                            <ObjectStatus id="_IDGenObjectStatus" 
+                                text="{resultModel>status}" 
+                                state="{= ${resultModel>status} === 'SUCCE' ? 'Success' : 'Error' }" />                            
+                            <Text id="_IDGenText6" text="{resultModel>fromvalue}" />
+                            <Text id="_IDGenText7" text="{resultModel>tovalue}" />
+                            <Text id="_IDGenTime1" text="{resultModel>time}" />
+                            <Text id="_IDGenUnit1" text="{resultModel>unit}" />
+                            <Text id="_IDGenCost1" text="{resultModel>cost}" />
+                            <Text id="_IDGenInsert1" text="{resultModel>insertchk}" />
+                            <Text id="_IDGenText5" text="{resultModel>message}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <beginButton>
+            <Button id="_IDGenButton" text="Close" press=".onCloseResultDialog" type="Emphasized"/>
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>
