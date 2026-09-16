@@ -13,8 +13,9 @@ sap.ui.define([
 
         onFileAdded: function () {
             this.byId("uploadBtn").setEnabled(true);
+            this.byId("excelUploadSet").setEnabled(false);
         },
-
+       
         onUploadTrigger: function () {
             var oUploadSet = this.getView().byId("excelUploadSet");
             var aItems = oUploadSet.getIncompleteItems();

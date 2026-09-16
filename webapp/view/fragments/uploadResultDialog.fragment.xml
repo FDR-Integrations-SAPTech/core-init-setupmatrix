@@ -6,7 +6,7 @@
             <!-- Bind to the temporary local client-side JSON model -->
             <Table id="resultTable" items="{resultModel>/items}" sticky="ColumnHeaders">
                 <columns>                    
-                    <Column id="_IDGenColumn1" width="6rem"><Text id="_IDGenText1" text="Status" /></Column>
+                    <Column id="_IDGenColumn1" width="7rem"><Text id="_IDGenText1" text="Status" /></Column>
                     <Column id="_IDGenColumn2" width="6rem"><Text id="_IDGenText2" text="From" /></Column>
                     <Column id="_IDGenColumn3" width="6rem"><Text id="_IDGenText3" text="To" /></Column>
                     <Column id="_IDGenColumn5" width="6rem" ><Text id="_IDGenTime" text="Time" /></Column>
@@ -22,7 +22,7 @@
                             <!-- Visual status anchor utilizing an ObjectStatus micro-color indicator -->
                             <ObjectStatus id="_IDGenObjectStatus" 
                                 text="{resultModel>status}" 
-                                state="{= ${resultModel>status} === 'SUCCE' ? 'Success' : 'Error' }" />                            
+                                state="{= ${resultModel>status} === 'SUCCESS' ? 'Success' : 'Error' }" />                            
                             <Text id="_IDGenText6" text="{resultModel>fromvalue}" />
                             <Text id="_IDGenText7" text="{resultModel>tovalue}" />
                             <Text id="_IDGenTime1" text="{resultModel>time}" />

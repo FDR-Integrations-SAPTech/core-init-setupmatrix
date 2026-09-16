@@ -6,14 +6,16 @@
         <content>
             <upload:UploadSet
                 id="excelUploadSet"
-                instantUpload="false"
+                instantUpload="true"
                 maxFileNameLength="50"
                 afterItemAdded="onFileAdded"
-                uploadCompleted="onUploadComplete">
+                uploadCompleted="onUploadComplete"
+                mode="None"
+                 >
                 <upload:toolbar>
                     <OverflowToolbar id="_IDGenOverflowToolbar">
                         <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
-                        <Button id="uploadBtn" text="Upload Setup Matrix" press="onUploadTrigger" type="Emphasized" enabled="false"/>
+                        <Button id="uploadBtn" text="Generate Setup Matrices" press="onUploadTrigger" type="Emphasized" enabled="false"/>
                     </OverflowToolbar>
                 </upload:toolbar>
             </upload:UploadSet>
